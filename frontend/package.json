@@ -8,7 +8,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "if exist dist rmdir /s /q dist",
+    "prebuild": "npm run clean",
+    "postbuild": "copy dist\\index.html dist\\200.html"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
