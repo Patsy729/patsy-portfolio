@@ -1,9 +1,6 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
 
 const SolarSystem = () => {
-  const { isDark } = useTheme();
-
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
       {/* Central star (sun) */}
@@ -15,14 +12,14 @@ const SolarSystem = () => {
       {[...Array(5)].map((_, i) => (
         <div
           key={i}
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-[#ff00ff] rounded-full opacity-10`}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-[#ff00ff] rounded-full opacity-10"
           style={{
             width: `${(i + 1) * 200}px`,
             height: `${(i + 1) * 200}px`,
             animation: `spin-${['slow', 'slower', 'slowest'][i % 3]} ${20 + i * 10}s linear infinite`
           }}
         >
-          <div 
+          <div
             className="absolute w-3 h-3 bg-[#ff00ff] rounded-full blur-md"
             style={{
               top: '0',

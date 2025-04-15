@@ -1,9 +1,6 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
 
 const ButterflyDesign = () => {
-  const { isDark } = useTheme();
-
   const renderButterfly = (size, className) => (
     <div className="relative">
       {/* Glow effect */}
@@ -64,38 +61,38 @@ const ButterflyDesign = () => {
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
       {/* Top right butterfly */}
       <div className="absolute top-1/4 right-10 transform -translate-y-1/2 animate-float">
-        {renderButterfly(40, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-60`)}
+        {renderButterfly(40, "text-[#ff00ff] opacity-60")}
       </div>
 
       {/* Bottom left butterfly */}
       <div className="absolute bottom-1/4 left-10 transform -translate-y-1/2 animate-floatReverse">
-        {renderButterfly(30, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-50`)}
+        {renderButterfly(30, "text-[#ff00ff] opacity-50")}
       </div>
 
       {/* Additional butterflies */}
       <div className="absolute top-1/3 left-1/4 transform -translate-y-1/2 animate-floatSlow">
-        {renderButterfly(25, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-40`)}
+        {renderButterfly(25, "text-[#ff00ff] opacity-40")}
       </div>
 
       <div className="absolute bottom-1/3 right-1/4 transform -translate-y-1/2 animate-floatReverseSlow">
-        {renderButterfly(35, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-55`)}
+        {renderButterfly(35, "text-[#ff00ff] opacity-55")}
       </div>
 
       {/* Stars */}
       <div className="absolute top-1/6 left-1/3 animate-twinkle">
-        {renderStar(15, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-20`)}
+        {renderStar(15, "text-[#ff00ff] opacity-20")}
       </div>
 
       <div className="absolute top-2/3 right-1/3 animate-twinkleSlow">
-        {renderStar(20, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-25`)}
+        {renderStar(20, "text-[#ff00ff] opacity-25")}
       </div>
 
       <div className="absolute bottom-1/6 left-2/3 animate-twinkle">
-        {renderStar(12, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-15`)}
+        {renderStar(12, "text-[#ff00ff] opacity-15")}
       </div>
 
       <div className="absolute top-1/2 right-1/6 animate-twinkleSlow">
-        {renderStar(18, `${isDark ? 'text-[#ff00ff]' : 'text-[#ff00ff]'} opacity-20`)}
+        {renderStar(18, "text-[#ff00ff] opacity-20")}
       </div>
     </div>
   );

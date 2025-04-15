@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useTheme } from '../context/ThemeContext'
 
 const ContactPage = () => {
-  const { isDark } = useTheme();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -48,28 +46,15 @@ const ContactPage = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-[#1a0f1a]' : 'bg-[#fefefe]'} pt-20 md:pt-24`}>
+    <div id="contact" className="bg-[#fefefe] min-h-screen pt-16 md:pt-24">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-8 ${isDark ? 'text-white' : 'text-[#1a0f1a]'}`}>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-[#1a0f1a]">
           Contact <span className="text-[#ff00ff]">Me</span>
         </h2>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="space-y-6 sm:space-y-8 flex flex-col justify-center">
-            {/* Location */}
-            <div className="flex items-start gap-3">
-              <div className="text-[#ff00ff] mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <h3 className={`text-sm sm:text-base font-bold mb-0.5 ${isDark ? 'text-white' : 'text-[#1a0f1a]'}`}>Location</h3>
-                <p className={`text-xs sm:text-sm ${isDark ? 'text-gray-300' : 'text-[#1a0f1a]'}`}>Oton, Iloilo City</p>
-              </div>
-            </div>
-
+          <div className="space-y-4 text-center md:text-left">
             {/* Email */}
             <div className="flex items-start gap-3">
               <div className="text-[#ff00ff] mt-1">
@@ -79,11 +64,10 @@ const ContactPage = () => {
                 </svg>
               </div>
               <div>
-                <h3 className={`text-sm sm:text-base font-bold mb-0.5 ${isDark ? 'text-white' : 'text-[#1a0f1a]'}`}>Email</h3>
-                <p className={`text-xs sm:text-sm ${isDark ? 'text-gray-300' : 'text-[#1a0f1a]'}`}>patsy.29school@gmail.com</p>
+                <h3 className="text-sm sm:text-base font-bold mb-0.5 text-[#1a0f1a]">Email</h3>
+                <p className="text-xs sm:text-sm text-[#1a0f1a]">ronimeepatsy.29w@gmail.com</p>
               </div>
             </div>
-
             {/* Phone */}
             <div className="flex items-start gap-3">
               <div className="text-[#ff00ff] mt-1">
@@ -92,8 +76,8 @@ const ContactPage = () => {
                 </svg>
               </div>
               <div>
-                <h3 className={`text-sm sm:text-base font-bold mb-0.5 ${isDark ? 'text-white' : 'text-[#1a0f1a]'}`}>Phone</h3>
-                <p className={`text-xs sm:text-sm ${isDark ? 'text-gray-300' : 'text-[#1a0f1a]'}`}>09940291043</p>
+                <h3 className="text-sm sm:text-base font-bold mb-0.5 text-[#1a0f1a]">Phone</h3>
+                <p className="text-xs sm:text-sm text-[#1a0f1a]">+63 994 029 1043</p>
               </div>
             </div>
           </div>
@@ -101,7 +85,7 @@ const ContactPage = () => {
           {/* Contact Form */}
           <div>
             <form 
-              action="https://formsubmit.co/ajax/patsy.29school@gmail.com" 
+              action="https://formsubmit.co/ajax/ronimeepatsy.29w@gmail.com" 
               method="POST"
               onSubmit={handleSubmit} 
               className="space-y-4"
@@ -120,9 +104,7 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className={`w-full border border-[#ff00ff] rounded-full px-4 py-2 sm:py-2.5 text-xs sm:text-sm focus:outline-none ${
-                    isDark ? 'bg-[#1a0f1a] text-white placeholder-gray-400' : 'bg-white text-[#1a0f1a] placeholder-gray-500'
-                  }`}
+                  className="w-full border border-[#ff00ff] rounded-full px-4 py-2 sm:py-2.5 text-xs sm:text-sm focus:outline-none bg-white text-[#1a0f1a] placeholder-gray-500"
                   required
                 />
               </div>
@@ -133,9 +115,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  className={`w-full border border-[#ff00ff] rounded-full px-4 py-2 sm:py-2.5 text-xs sm:text-sm focus:outline-none ${
-                    isDark ? 'bg-[#1a0f1a] text-white placeholder-gray-400' : 'bg-white text-[#1a0f1a] placeholder-gray-500'
-                  }`}
+                  className="w-full border border-[#ff00ff] rounded-full px-4 py-2 sm:py-2.5 text-xs sm:text-sm focus:outline-none bg-white text-[#1a0f1a] placeholder-gray-500"
                   required
                 />
               </div>
@@ -146,30 +126,26 @@ const ContactPage = () => {
                   onChange={handleChange}
                   placeholder="Your Message"
                   rows="4"
-                  className={`w-full border border-[#ff00ff] rounded-3xl px-4 py-2 sm:py-2.5 text-xs sm:text-sm focus:outline-none resize-none ${
-                    isDark ? 'bg-[#1a0f1a] text-white placeholder-gray-400' : 'bg-white text-[#1a0f1a] placeholder-gray-500'
-                  }`}
+                  className="w-full border border-[#ff00ff] rounded-3xl px-4 py-2 sm:py-2.5 text-xs sm:text-sm focus:outline-none resize-none bg-white text-[#1a0f1a] placeholder-gray-500"
                   required
                 />
               </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full bg-[#ff00ff] text-white text-xs sm:text-sm font-semibold py-2 sm:py-2.5 rounded-full transition-colors ${
-                  isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#ff40ff]'
-                }`}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
-
-              {/* Status Messages */}
-              {submitStatus === 'success' && (
-                <p className="text-green-500 text-sm text-center">Message sent successfully!</p>
-              )}
-              {submitStatus === 'error' && (
-                <p className="text-red-500 text-sm text-center">Failed to send message. Please try again.</p>
-              )}
+              <div>
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#ff00ff] text-white rounded-full py-2 sm:py-2.5 text-sm sm:text-base font-medium hover:bg-opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+              </div>
             </form>
+            {submitStatus === 'success' && (
+              <p className="mt-4 text-center text-green-600 text-sm">Message sent successfully!</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="mt-4 text-center text-red-600 text-sm">Failed to send message. Please try again.</p>
+            )}
           </div>
         </div>
       </div>

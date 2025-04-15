@@ -1,129 +1,166 @@
 import React, { useState } from 'react'
-import { useTheme } from '../context/ThemeContext'
 
 const ProjectsPage = () => {
-  const { isDark } = useTheme();
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('UI/UX');
+
+  const categories = ['UI/UX', 'Graphic Design', 'Branding'];
 
   const projects = [
     {
       title: "Hamuntu",
-      description: "A web app for managing school clubs. Features event scheduling, member tracking, announcements, and document sharing in one intuitive platform. Simplifies organization and boosts student engagement",
+      category: "UI/UX",
+      tags: ["UX Case Study", "Responsive Design"],
       image: "/hamuntu.png",
-      fullDescription: "A comprehensive web application designed to streamline school club management and enhance student engagement.\n\nKey Features:\n• Event Scheduling: Easily plan and manage club activities and meetings\n• Member Management: Track membership, attendance, and participation\n• Document Sharing: Central hub for club resources and materials\n• Announcements: Keep members informed with real-time updates\n• Intuitive Interface: User-friendly design for students and club leaders"
+      description: "A web app for managing school clubs. Features event scheduling, member tracking, announcements, and document sharing in one intuitive platform. Simplifies organization and boosts student engagement",
+      figmaLink: "https://www.figma.com/design/m0y8sW7efQvWF6tJcOeTxL/UI-UX-DESIGN?node-id=0-1"
     },
     {
-      title: "Paro",
-      description: "A community-driven web app designed to connect people, foster engagement,",
+      title: "PARO",
+      category: "UI/UX",
+      tags: ["UI Design", "Website Design"],
       image: "/paro.png",
-      fullDescription: "A community-driven web app designed to connect people, foster engagement, and facilitate collaboration within local or interest-based groups.\n\nKey Features:\n• Community Hub: Create or join groups based on shared interests, locations, or goals.\n• Event Management: Organize and RSVP for local meetups, workshops, or virtual events.\n• Discussion Forums: Share ideas, ask questions, and engage in meaningful conversations.\n• Resource Sharing: Upload and access files, guides, or helpful links within the community.\n• Messaging & Networking: Direct chat and group messaging to stay connected.\n• User Profiles: Customizable profiles to showcase skills, interests, and contributions.\n• Moderation Tools:Admins can manage members, content, and ensure a safe environment."
+      description: "A community-driven web app designed to connect people, foster engagement, and facilitate collaboration within local or interest-based groups.",
+      figmaLink: "https://www.figma.com/design/m0y8sW7efQvWF6tJcOeTxL/UI-UX-DESIGN?node-id=2-5939"
     },
     {
-      title: "Mata",
-      description: "Mata is a lightweight web app that helps teachers quickly see which students are late by tracking their location when they enter school grounds.",
+      title: "MATA",
+      category: "UI/UX",
+      tags: ["Dashboard", "UI Design"],
       image: "/mata.png",
-      fullDescription: "Mata is a lightweight web app that helps teachers quickly see which students are late by tracking their location when they enter school grounds. No extra clutter - just a real-time status update for classroom management.\n\nKey Features:\n• Live Location Tracking: Detects when students arrive on campus via GPS/Wi-Fi. Updates their status in real-time (e.g., 'On Time' or 'Late').\n• Late Student Alerts (Teacher View): Teachers see a red/yellow/green indicator or list of late students."
+      description: "Mata is a lightweight web app that helps teachers quickly see which students are late by tracking their location when they enter school grounds.",
+      figmaLink: "https://www.figma.com/design/m0y8sW7efQvWF6tJcOeTxL/UI-UX-DESIGN?node-id=1-2625"
     },
+    // Graphic Design Projects
+    {
+      title: "Farm Honey Product",
+      category: "Graphic Design",
+      tags: ["Product Design", "Branding"],
+      image: "/farmhoney.jpg",
+      description: "Product design and branding for Farm Honey, featuring natural honey bee products with FDA certification.",
+    },
+    {
+      title: "Wild Honey Product",
+      category: "Graphic Design",
+      tags: ["Product Design", "Branding"],
+      image: "/wildhoney.jpg",
+      description: "Product design and branding for Wild Honey, featuring natural sweetener from wildflowers.",
+    },
+    {
+      title: "Exam Motivation - Prefinals",
+      category: "Graphic Design",
+      tags: ["Social Media", "Educational"],
+      image: "/prefinals.jpg",
+      description: "Motivational design for BS Information Technology students during prefinals week.",
+    },
+    {
+      title: "Exam Motivation - High Scores",
+      category: "Graphic Design",
+      tags: ["Social Media", "Educational"],
+      image: "/midterms.jpg",
+      description: "Motivational design featuring exam preparation checklist and success quote.",
+    },
+    {
+      title: "Second Semester Announcement",
+      category: "Graphic Design",
+      tags: ["Social Media", "Educational"],
+      image: "/secondsem.jpg",
+      description: "Creative announcement design for the upcoming second semester.",
+    },
+    // Branding Projects
+    {
+      title: "MATA Logo Design",
+      category: "Branding",
+      tags: ["Logo Design", "Brand Identity"],
+      image: "/Mata Branding.png",
+      description: "A minimalist and modern logo design for MATA, featuring a distinctive 'M' shape in a fresh green color palette that represents growth and reliability.",
+    },
+    {
+      title: "YO HONEY Brand Identity",
+      category: "Branding",
+      tags: ["Logo Design", "Brand Identity"],
+      image: "/YoHoney Branding.jpg",
+      description: "Natural honey bee brand identity featuring a playful bee icon integrated into the typography, with warm golden tones reflecting the natural essence of honey.",
+    },
+    {
+      title: "Hamuntu Logo Design",
+      category: "Branding",
+      tags: ["Logo Design", "Brand Identity"],
+      image: "/Hamuntu Branding.png",
+      description: "Modern and dynamic logo design for Hamuntu, combining puzzle pieces in red and blue to symbolize connection and community engagement.",
+    }
   ];
 
+  const filteredProjects = projects.filter(project => project.category === selectedCategory);
+
   return (
-    <div className={`min-h-screen pt-20 ${isDark ? 'bg-[#1a0f1a]' : 'bg-[#fefefe]'}`}>
-      {/* Projects Header */}
+    <div id="projects" className="bg-[#fefefe] min-h-screen pt-16 md:pt-24">
       <div className="container mx-auto px-4 sm:px-6 py-12">
-        <h2 className={`text-3xl sm:text-4xl font-bold mb-16 text-center ${isDark ? 'text-white' : 'text-[#1a0f1a]'}`}>
-          My <span className="text-[#ff00ff]">Projects</span>
-        </h2>
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1a0f1a]">
+            Lets have a look at my <span className="text-[#ff00ff]">Projects</span>
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600">
+            Explore my design services, from user interface and top-notched visual designs. Let's craft exceptional digital experiences together.
+          </p>
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+                selectedCategory === category
+                  ? 'bg-[#ff00ff] text-white'
+                  : 'bg-white text-gray-800 border border-[#ff00ff]/20 hover:border-[#ff00ff]'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-          {projects.map((project, index) => (
-            <div 
-              key={index}
-              className="group animate-fade-in-up"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              {/* Project Card */}
-              <div className={`rounded-lg overflow-hidden border border-[#ff00ff] ${
-                isDark ? 'bg-[#1a0f1a]' : 'bg-white'
-              }`}>
-                {/* Project Image */}
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`w-full h-48 ${
+                  selectedCategory === 'Graphic Design' ? 'object-contain' : 'object-cover'
+                }`}
+              />
+              <div className="p-6">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="bg-[#ff00ff]/10 text-[#ff00ff] text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-
-                {/* Project Info */}
-                <div className="p-3">
-                  <h3 className={`text-base font-semibold mb-1.5 ${
-                    isDark ? 'text-white' : 'text-[#1a0f1a]'
-                  }`}>
-                    {project.title}
-                  </h3>
-                  <p className={`text-[11px] mb-3 line-clamp-2 leading-relaxed ${
-                    isDark ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
-                    {project.description}
-                  </p>
-
-                  {/* View More Button */}
-                  <button 
-                    onClick={() => setSelectedProject(project)}
-                    className="w-full py-1.5 px-3 bg-[#ff00ff] text-white rounded-full text-xs font-medium 
-                      transition-all duration-300 hover:bg-[#ff40ff]"
+                <h3 className="text-xl font-bold mb-2 text-[#1a0f1a]">{project.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                {project.figmaLink && (
+                  <a
+                    href={project.figmaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#ff00ff] hover:underline text-sm font-medium"
                   >
-                    View More
-                  </button>
-                </div>
+                    View on Figma
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-10l6 6m0 0l-6-6m6 6v6m-6-6h6" />
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Project Details Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 pt-4 pb-20 overflow-hidden">
-          <div 
-            className="fixed inset-0 transition-opacity"
-            onClick={() => setSelectedProject(null)}
-          >
-            <div className="absolute inset-0 bg-black/75 backdrop-blur-sm"></div>
-          </div>
-
-          <div className="relative w-full max-w-md transform overflow-hidden rounded-xl border-2 border-[#ff00ff] bg-[#1a0f1a] shadow-2xl">
-            {/* Modal Image */}
-            <div className="relative aspect-[3/2] w-full overflow-hidden">
-              <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title}
-                className="w-full h-full object-cover"
-              />
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-2 right-2 p-1 rounded-full bg-[#ff00ff] text-white hover:bg-[#ff40ff] transition-colors"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Modal Content */}
-            <div className="p-4">
-              <h3 className="text-xl font-bold mb-2 text-white">
-                {selectedProject.title}
-              </h3>
-              
-              <div className="space-y-2 text-gray-300 whitespace-pre-line text-xs">
-                {selectedProject.fullDescription}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       <style jsx global>{`
         @keyframes fade-in-up {
