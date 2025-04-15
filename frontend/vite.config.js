@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ["portfolio-patsy.onrender.com"],
+    allowedHosts: ["portfolio-patsy.onrender.com", "ronimeepatsyportfolio.onrender.com"],
   },
   build: {
     outDir: "dist",
