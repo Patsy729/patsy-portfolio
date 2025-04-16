@@ -16,9 +16,11 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@vitejs/plugin-react-swc": "^3.8.1",
+    "glob": "^11.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
@@ -26,7 +28,7 @@
     "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
-    "eslint": "^8.57.0",
+    "eslint": "^9.24.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "globals": "^15.0.0",
