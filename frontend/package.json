@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "clean": "if exist dist rmdir /s /q dist",
+    "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "postbuild": "copy dist\\index.html dist\\200.html"
   },
