@@ -66,9 +66,13 @@ header h1 {
 
 main {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Remove flexbox centering to allow vertical growth and scrolling */
+  display: block;
+  /* Optionally add min-height to ensure content area grows */
+  min-height: 100vh;
+  /* Remove align-items and justify-content */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
 .step {

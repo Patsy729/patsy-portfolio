@@ -1,4 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import hamuntuImage from '../../public/hamuntu.png';
+import paroImage from '../../public/paro.png';
+import mataImage from '../../public/mata.png';
+import farmHoneyImage from '../../public/farmhoney.jpg';
+import wildHoneyImage from '../../public/wildhoney.jpg';
+import prefinalsImage from '../../public/prefinals.jpg';
+import midtermsImage from '../../public/midterms.jpg';
+import secondsemImage from '../../public/secondsem.jpg';
+import mataBrandingImage from '../../public/Mata Branding.png';
+import yoHoneyBrandingImage from '../../public/YoHoney Branding.jpg';
+import hamuntuBrandingImage from '../../public/Hamuntu Branding.png';
 
 const ProjectsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('UI/UX');
@@ -10,7 +21,7 @@ const ProjectsPage = () => {
       title: "Hamuntu",
       category: "UI/UX",
       tags: ["UX Case Study", "Responsive Design"],
-      image: "/hamuntu.png",
+      image: hamuntuImage,
       description: "A web app for managing school clubs. Features event scheduling, member tracking, announcements, and document sharing in one intuitive platform. Simplifies organization and boosts student engagement",
       figmaLink: "https://www.figma.com/design/m0y8sW7efQvWF6tJcOeTxL/UI-UX-DESIGN?node-id=0-1"
     },
@@ -18,7 +29,7 @@ const ProjectsPage = () => {
       title: "PARO",
       category: "UI/UX",
       tags: ["UI Design", "Website Design"],
-      image: "/paro.png",
+      image: paroImage,
       description: "A community-driven web app designed to connect people, foster engagement, and facilitate collaboration within local or interest-based groups.",
       figmaLink: "https://www.figma.com/design/m0y8sW7efQvWF6tJcOeTxL/UI-UX-DESIGN?node-id=2-5939"
     },
@@ -26,7 +37,7 @@ const ProjectsPage = () => {
       title: "MATA",
       category: "UI/UX",
       tags: ["Dashboard", "UI Design"],
-      image: "/mata.png",
+      image: mataImage,
       description: "Mata is a lightweight web app that helps teachers quickly see which students are late by tracking their location when they enter school grounds.",
       figmaLink: "https://www.figma.com/design/m0y8sW7efQvWF6tJcOeTxL/UI-UX-DESIGN?node-id=1-2625"
     },
@@ -35,35 +46,35 @@ const ProjectsPage = () => {
       title: "Farm Honey Product",
       category: "Graphic Design",
       tags: ["Product Design", "Branding"],
-      image: "/farmhoney.jpg",
+      image: farmHoneyImage,
       description: "Product design and branding for Farm Honey, featuring natural honey bee products with FDA certification.",
     },
     {
       title: "Wild Honey Product",
       category: "Graphic Design",
       tags: ["Product Design", "Branding"],
-      image: "/wildhoney.jpg",
+      image: wildHoneyImage,
       description: "Product design and branding for Wild Honey, featuring natural sweetener from wildflowers.",
     },
     {
       title: "Exam Motivation - Prefinals",
       category: "Graphic Design",
       tags: ["Social Media", "Educational"],
-      image: "/prefinals.jpg",
+      image: prefinalsImage,
       description: "Motivational design for BS Information Technology students during prefinals week.",
     },
     {
       title: "Exam Motivation - High Scores",
       category: "Graphic Design",
       tags: ["Social Media", "Educational"],
-      image: "/midterms.jpg",
+      image: midtermsImage,
       description: "Motivational design featuring exam preparation checklist and success quote.",
     },
     {
       title: "Second Semester Announcement",
       category: "Graphic Design",
       tags: ["Social Media", "Educational"],
-      image: "/secondsem.jpg",
+      image: secondsemImage,
       description: "Creative announcement design for the upcoming second semester.",
     },
     // Branding Projects
@@ -71,21 +82,21 @@ const ProjectsPage = () => {
       title: "MATA Logo Design",
       category: "Branding",
       tags: ["Logo Design", "Brand Identity"],
-      image: "/Mata Branding.png",
+      image: mataBrandingImage,
       description: "A minimalist and modern logo design for MATA, featuring a distinctive 'M' shape in a fresh green color palette that represents growth and reliability.",
     },
     {
       title: "YO HONEY Brand Identity",
       category: "Branding",
       tags: ["Logo Design", "Brand Identity"],
-      image: "/YoHoney Branding.jpg",
+      image: yoHoneyBrandingImage,
       description: "Natural honey bee brand identity featuring a playful bee icon integrated into the typography, with warm golden tones reflecting the natural essence of honey.",
     },
     {
       title: "Hamuntu Logo Design",
       category: "Branding",
       tags: ["Logo Design", "Brand Identity"],
-      image: "/Hamuntu Branding.png",
+      image: hamuntuBrandingImage,
       description: "Modern and dynamic logo design for Hamuntu, combining puzzle pieces in red and blue to symbolize connection and community engagement.",
     }
   ];

@@ -7,16 +7,11 @@ const Navbar = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      const navbarHeight = 64;
+      const navbarHeight = 64; // height of navbar to offset scroll
       const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
       window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+      setIsOpen(false); // close mobile menu on click
     }
-    setIsOpen(false); // Close mobile menu after click
-  };
-
-  const handleScroll = (e, sectionId) => {
-    e.preventDefault();
-    scrollToSection(sectionId);
   };
 
   return (
@@ -24,51 +19,45 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <a
-              href="#home"
-              onClick={(e) => handleScroll(e, 'home')}
-              className="text-[#ff00ff] text-2xl font-bold"
+            <button
+              onClick={() => scrollToSection('home')}
+              className="text-[#ff00ff] text-2xl font-bold bg-transparent border-none cursor-pointer"
             >
               Patfolio
-            </a>
+            </button>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              onClick={(e) => handleScroll(e, 'home')}
-              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium"
+            <button
+              onClick={() => scrollToSection('home')}
+              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium bg-transparent border-none cursor-pointer"
             >
               Home
-            </a>
-            <a
-              href="#about"
-              onClick={(e) => handleScroll(e, 'about')}
-              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium bg-transparent border-none cursor-pointer"
             >
               About
-            </a>
-            <a
-              href="#projects"
-              onClick={(e) => handleScroll(e, 'projects')}
-              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium bg-transparent border-none cursor-pointer"
             >
               Projects
-            </a>
-            <a
-              href="#education"
-              onClick={(e) => handleScroll(e, 'education')}
-              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('education')}
+              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium bg-transparent border-none cursor-pointer"
             >
               Education
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => handleScroll(e, 'contact')}
-              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-800 hover:text-[#ff00ff] px-3 py-2 rounded-md text-base font-medium bg-transparent border-none cursor-pointer"
             >
               Contact
-            </a>
+            </button>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -85,41 +74,36 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a
-              href="#home"
-              onClick={(e) => handleScroll(e, 'home')}
-              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium"
+            <button
+              onClick={() => scrollToSection('home')}
+              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium bg-transparent border-none cursor-pointer w-full text-left"
             >
               Home
-            </a>
-            <a
-              href="#about"
-              onClick={(e) => handleScroll(e, 'about')}
-              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium bg-transparent border-none cursor-pointer w-full text-left"
             >
               About
-            </a>
-            <a
-              href="#projects"
-              onClick={(e) => handleScroll(e, 'projects')}
-              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium bg-transparent border-none cursor-pointer w-full text-left"
             >
               Projects
-            </a>
-            <a
-              href="#education"
-              onClick={(e) => handleScroll(e, 'education')}
-              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('education')}
+              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium bg-transparent border-none cursor-pointer w-full text-left"
             >
               Education
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => handleScroll(e, 'contact')}
-              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium"
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-800 hover:text-[#ff00ff] block px-3 py-2 rounded-md text-lg font-medium bg-transparent border-none cursor-pointer w-full text-left"
             >
               Contact
-            </a>
+            </button>
           </div>
         </div>
       )}

@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/patsy-portfolio",
+  base: "patsy-portfolio",
   plugins: [react()],
   server: {
     host: "::",
@@ -13,7 +13,7 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    assetsDir: "assets",
+    assetsDir: "public",
     sourcemap: false,
     minify: true,
     rollupOptions: {

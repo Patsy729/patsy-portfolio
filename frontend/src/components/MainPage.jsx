@@ -8,21 +8,21 @@ import ContactPage from './ContactPage';
 const MainPage = () => {
   return (
     <div>
-      <div id="home">
+      <section id="home">
         <HomePage />
-      </div>
-      <div id="about">
+      </section>
+      <section id="about">
         <AboutPage />
-      </div>
-      <div id="projects">
+      </section>
+      <section id="projects">
         <ProjectsPage />
-      </div>
-      <div id="education">
+      </section>
+      <section id="education">
         <EducationPage />
-      </div>
-      <div id="contact">
+      </section>
+      <section id="contact">
         <ContactPage />
-      </div>
+      </section>
     </div>
   );
 };

@@ -3,7 +3,12 @@ import patsyImage from '../../public/patsy.png';
 import './HomePage.css';
 
 const handleDownload = () => {
-  window.open("https://drive.google.com/file/d/17BJEvibpJTPyUkzcbRgX4dH7LYm99daP/view?usp=sharing", "_blank");
+  const link = document.createElement('a');
+  link.href = "/Ronime Patsy Gascon - CV.pdf";
+  link.download = "Ronime_Patsy_Gascon_CV.pdf"; // Optional: Rename the downloaded file
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 const HomePage = () => {
@@ -73,15 +78,9 @@ const HomePage = () => {
             </p>
             
             <div className="flex justify-center md:justify-start gap-4 sm:gap-6 mb-6 sm:mb-8">
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="bg-transparent text-[#ff00ff] px-4 sm:px-6 py-2 rounded-full border-4 border-[#ff00ff] hover:bg-[#ff00ff] hover:text-white transition-all duration-300 text-sm sm:text-base"
-              >
-                Hire Me
-              </button>
               <button 
                 onClick={handleDownload}
-                className="bg-[#ff00ff]/10 text-[#ff00ff] px-4 sm:px-6 py-2 rounded-full border-4 border-[#ff00ff] hover:bg-[#ff00ff] hover:text-white transition-all duration-300 text-sm sm:text-base"
+                className="bg-[#ff00ff]/10 text-[#ff00ff] px-4 sm:px-6 py-2 rounded-full border-2 border-[#ff00ff] hover:bg-[#ff00ff] hover:text-white transition-all duration-300 text-sm sm:text-base"
               >
                 Download CV
               </button>
@@ -102,3 +101,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
